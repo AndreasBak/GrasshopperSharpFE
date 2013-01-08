@@ -1,0 +1,17 @@
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\obj\Release\SharpFEGrasshopper.Core.csprojResolveAssemblyReference.cache
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\obj\Release\SharpGrasshopper.Properties.Resources.resources
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\obj\Release\SharpFEGrasshopper.Core.csproj.GenerateResource.Cache
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\obj\Release\SharpFEGrasshopper.Core.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\obj\Release\SharpFEGrasshopper.Core.pdb
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\SharpFEGrasshopper.Core.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\SharpFEGrasshopper.Core.pdb
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\MathNet.Numerics.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\SharpFE.Core.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\MathNet.Numerics.pdb
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\MathNet.Numerics.xml
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\release\SharpFEGrasshopper.Core.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\release\SharpFEGrasshopper.Core.pdb
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\release\MathNet.Numerics.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\release\SharpFE.Core.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\release\MathNet.Numerics.pdb
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Core\bin\release\MathNet.Numerics.xml

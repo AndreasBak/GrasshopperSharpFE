@@ -1,0 +1,6 @@
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Tests\bin\Debug\Tests.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Tests\bin\Debug\Tests.pdb
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Tests\bin\Debug\NUnit.Framework.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Tests\obj\x86\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Tests\obj\x86\Debug\Tests.dll
+C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\SharpFEGrasshopper.Tests\obj\x86\Debug\Tests.pdb
