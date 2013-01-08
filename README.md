@@ -1,4 +1,4 @@
 GrasshopperSharpFE
 ==================
 
-Fast finite element analysis for Grasshopper
+Fast finite element analysis components for Grasshopper
