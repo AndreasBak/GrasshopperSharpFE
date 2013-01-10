@@ -67,14 +67,14 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="MathNet.Numerics">
-      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Release\MathNet.Numerics.dll</HintPath>
+      <HintPath>lib\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="RhinoCommon">
       <HintPath>..\..\..\..\..\..\..\Program Files %28x86%29\Grasshopper for Rhino 5\rh_common\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SharpFE.Core">
-      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Release\SharpFE.Core.dll</HintPath>
+      <HintPath>lib\SharpFE.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
