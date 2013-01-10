@@ -21,8 +21,6 @@ C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\obj\Release\SharpFEGrasshopper.Core.csproj.GenerateResource.Cache
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\obj\Release\SharpFEGrasshopper.Core.dll
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\obj\Release\SharpFEGrasshopper.Core.pdb
-C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Release\MathNet.Numerics.dll
-C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Release\SharpFE.Core.dll
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Release\MathNet.Numerics.pdb
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Release\MathNet.Numerics.xml
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\obj\Release\SharpGrasshopper.Resources.resources

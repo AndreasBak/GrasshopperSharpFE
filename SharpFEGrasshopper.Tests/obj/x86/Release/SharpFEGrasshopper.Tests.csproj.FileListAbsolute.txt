@@ -48,5 +48,3 @@ C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Test
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Release\OpenTK.xml
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\obj\x86\Release\SharpFEGrasshopper.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\obj\x86\Release\SharpFEGrasshopper.Tests.dll
-C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Release\MathNet.Numerics.dll
-C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Release\SharpFE.Core.dll
