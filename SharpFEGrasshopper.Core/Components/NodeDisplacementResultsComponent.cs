@@ -29,8 +29,9 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
 
 		protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
 		{
-			pManager.Register_VectorParam("Displacement", "dV", "Nodal Displacement Vector");
-
+			pManager.Register_VectorParam("Displacement vectors", "dV", "Nodal Displacement Vector");
+			pManager.Register_PointParam("Displaced points", "P", "Position of displaced nodes");
+			pManager.Register_GeometryParam("Displaced elements", "G", "Geometry of displaced elements");
 
 		}
 
@@ -45,98 +46,26 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
 			if (!DA.GetData(0, ref model)) { return; }
 
 			List<Vector3d> displacementVectors = new List<Vector3d>();
+			List<Point3d> displacedPoints = new List<Point3d>();
+			List<GeometryBase> displacedElements = new List<GeometryBase>();
 
-			if (model.Results == null) {
-
-				this.AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Results not availiable, solve model first.");
-				return;
-
-			} else {
-
-
-
-				FiniteElementResults results = model.Results;
-
-
-				switch (model.ModelType) {
-
-
-					case ModelType.Truss2D:
-						foreach (FiniteElementNode node in model.Nodes) {
-
-							Vector3d vector = new Vector3d();
-
-							if (model.Model.IsConstrained(node, DegreeOfFreedom.X)) {
-
-								vector.X = 0;
-
-
-							} else {
-								vector.X = results.GetDisplacement(node).X;
-							}
-							if (model.Model.IsConstrained(node, DegreeOfFreedom.Z)) {
-
-								vector.Z = 0;
-
-
-							} else {
-								vector.Z = results.GetDisplacement(node).Z;
-							}
-
-
-							displacementVectors.Add(vector);
-						}
-						break;
-
-
-					case ModelType.Full3D:
-						foreach (FiniteElementNode node in model.Nodes) {
-
-							Vector3d vector = new Vector3d();
-
-							if (model.Model.IsConstrained(node, DegreeOfFreedom.X)) {
-
-								vector.X = 0;
-
-							} else {
-								vector.X = results.GetDisplacement(node).X;
-							}
-							if (model.Model.IsConstrained(node, DegreeOfFreedom.Y)) {
-
-								vector.Y = 0;
-
-
-							} else {
+			for (int i = 0; i < model.Nodes.Count; i++) {			
+				Vector3d vector = model.GetNodeDisplacement(i);
+				Point3d point = model.GetDisplacedPoint(i);
+				displacementVectors.Add(vector);
+				displacedPoints.Add(point);		
+			}
+			
+			foreach (GH_Element element in model.Elements) {
 				
-								vector.Y = results.GetDisplacement(node).Y;
-							}
-
-							if (model.Model.IsConstrained(node, DegreeOfFreedom.Z)) {
-
-								vector.Z = 0;
-							} else {
-								vector.Z = results.GetDisplacement(node).Z;
-							}
-							displacementVectors.Add(vector);
-						}
-						break;
-
-
-					default:
-						throw new Exception("No such model type: " + model.ModelType);
-
-				}
-
-
-
+				displacedElements.Add(element.GetDeformedGeometry(model));
+				
+				
 			}
 
-
-
 			DA.SetDataList(0, displacementVectors);
-
-
-
+			DA.SetDataList(1, displacedPoints);
+			DA.SetDataList(2, displacedElements);
 
 		}
 

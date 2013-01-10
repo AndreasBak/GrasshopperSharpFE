@@ -14,38 +14,46 @@ namespace SharpFEGrasshopper.Core.TypeClass
 
 		private Vector3d Force { get; set; }      
 		private Vector3d Moment { get; set; }
-        private List<Point3d> Positions { get; set; }
+        private List<GH_Node> Nodes { get; set; }
         
         
         public GH_NodalLoad(Point3d position, Vector3d force, Vector3d moment) {
         
-        	this.Positions = new List<Point3d>();
+        	this.Nodes = new List<GH_Node>();
+        	
+        	
         	this.Force = force;
         	this.Moment = moment;
-        	this.Positions.Add(position);
+        	this.Nodes.Add(new GH_Node(position));
         	
         }
 
         public GH_NodalLoad(List<Point3d> positions, Vector3d force, Vector3d moment)
         {
-        	this.Positions = positions;
+        	this.Nodes = new List<GH_Node>();
+        	
+        	
+        	foreach(Point3d position in positions) {
+        		this.Nodes.Add(new GH_Node(position));
+        	}
         	this.Force = force;
         	this.Moment = moment;
           
         }
+        
+        public override string ToString()
+		{
+			return string.Format("Nodal Load: Force={0}, Moment={1}, at Nodes={2}]", Force, Moment, Nodes);
+		}
 
 
 
 
         public override void ToSharpLoad(GH_Model model)
         {
-        	foreach (Point3d position in Positions) {
-        	int index = model.Points.IndexOf(position);
         	
-        	if (index != -1) {
-        		
-        		ForceVector forceVector = null;
-        		FiniteElementNode node = model.Nodes[index];  
+        	
+        	ForceVector forceVector = null;
         	
         	switch (model.ModelType) {
         			
@@ -66,22 +74,14 @@ namespace SharpFEGrasshopper.Core.TypeClass
         		throw new Exception("No such model type implemented: "  + model.ModelType);
         
         		}
-        		
-        		model.Model.ApplyForceToNode(forceVector, node);
-        			
-        		
-        	} else {
+        	foreach (GH_Node node in Nodes) {
         	
-        		throw new Exception("Can not add force, no node at " + position);
+        		node.ToSharpElement(model);
+        		FiniteElementNode FEnode = model.Nodes[node.Index];
         		
-        	
         		
+        		model.Model.ApplyForceToNode(forceVector, FEnode);
         		
-        	}
-        			
-        			
-        	
-        	
 
         	}
 

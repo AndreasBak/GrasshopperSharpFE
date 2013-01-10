@@ -24,6 +24,10 @@ namespace SharpFEGrasshopper.Core.TypeClass
         }
 
         public abstract void ToSharpElement(GH_Model model);
+        
+        public abstract GeometryBase GetGeometry(GH_Model model);
+        
+        public abstract GeometryBase GetDeformedGeometry(GH_Model model);
     }
 
 }

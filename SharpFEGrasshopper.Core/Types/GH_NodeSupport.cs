@@ -11,13 +11,13 @@ namespace SharpFEGrasshopper.Core.TypeClass
     {
     	private bool UX, UY, UZ, RX, RY, RZ;
        
-        
-		private List<Point3d> Positions {get; set; }
+    	private List<GH_Node> Nodes {get; set;}
+	
 		
-				public GH_NodeSupport(Point3d position, bool UX, bool UY, bool UZ, bool RX, bool RY, bool RZ)
+		public GH_NodeSupport(Point3d position, bool UX, bool UY, bool UZ, bool RX, bool RY, bool RZ)
         {
-            this.Positions = new List<Point3d>();
-            this.Positions.Add(position);
+            this.Nodes = new List<GH_Node>();
+            this.Nodes.Add(new GH_Node(position));
             this.UX = UX;
             this.UY = UY;
             this.UZ = UZ;
@@ -29,7 +29,14 @@ namespace SharpFEGrasshopper.Core.TypeClass
         
 		public GH_NodeSupport(List<Point3d> positions, bool UX, bool UY, bool UZ, bool RX, bool RY, bool RZ)
         {
-            this.Positions = positions;
+			this.Nodes = new List<GH_Node>();
+			
+			foreach( Point3d position in positions) {
+			  this.Nodes.Add(new GH_Node(position));		
+			}
+			
+			
+			
             this.UX = UX;
             this.UY = UY;
             this.UZ = UZ;
@@ -46,14 +53,13 @@ namespace SharpFEGrasshopper.Core.TypeClass
         public override void ToSharpSupport(GH_Model model)
         {
         	
-        	foreach (Point3d position in Positions) {
+        	foreach (GH_Node node in Nodes) {
         	
-        		int index = model.Points.IndexOf(position);
+        		node.ToSharpElement(model);
         		
-        		if (index != -1)
-        		{
+     
         			
-        			FiniteElementNode node = model.Nodes[index];	
+        			FiniteElementNode FEnode = model.Nodes[node.Index];	
         			
         			switch (model.ModelType) {
         			
@@ -61,9 +67,9 @@ namespace SharpFEGrasshopper.Core.TypeClass
         				case ModelType.Truss2D:
         			
         					
-        			if (UX) {model.Model.ConstrainNode(node, DegreeOfFreedom.X);}
+        			if (UX) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.X);}
         		//	if (UY) {model.Model.ConstrainNode(node, DegreeOfFreedom.Y);}
-        			if (UZ) {model.Model.ConstrainNode(node, DegreeOfFreedom.Z);}
+        			if (UZ) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.Z);}
         		//	if (RX) {model.Model.ConstrainNode(node, DegreeOfFreedom.XX);}
         		//	if (RY) {model.Model.ConstrainNode(node, DegreeOfFreedom.YY);}
         		//	if (RZ) {model.Model.ConstrainNode(node, DegreeOfFreedom.ZZ);}
@@ -73,26 +79,21 @@ namespace SharpFEGrasshopper.Core.TypeClass
         		
         	case ModelType.Full3D:
         						
-        			if (UX) {model.Model.ConstrainNode(node, DegreeOfFreedom.X);}
-        			if (UY) {model.Model.ConstrainNode(node, DegreeOfFreedom.Y);}
-        			if (UZ) {model.Model.ConstrainNode(node, DegreeOfFreedom.Z);}
-        			if (RX) {model.Model.ConstrainNode(node, DegreeOfFreedom.XX);}
-        			if (RY) {model.Model.ConstrainNode(node, DegreeOfFreedom.YY);}
-        			if (RZ) {model.Model.ConstrainNode(node, DegreeOfFreedom.ZZ);}
+        			if (UX) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.X);}
+        			if (UY) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.Y);}
+        			if (UZ) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.Z);}
+        			if (RX) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.XX);}
+        			if (RY) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.YY);}
+        			if (RZ) {model.Model.ConstrainNode(FEnode, DegreeOfFreedom.ZZ);}
         			break;
         	default:
         		throw new Exception("No such model type: " + model.ModelType);
         		
         			}
         			
-        		} 
-        		else
-        		{
-        			throw new Exception("Cannot constrain node, no node at " + position);                 			
-        		}    	
+        		}  	
         	}
         	
         }
     }
 
-}

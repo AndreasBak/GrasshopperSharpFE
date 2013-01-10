@@ -28,7 +28,7 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.Register_GenericParam("SharpFE model", "R", "Finite Element mdoel with results");
+            pManager.Register_GenericParam("SharpFE model", "#FE", "Finite Element mdoel with results");
         }
 
         protected override void SolveInstance(IGH_DataAccess DA)
@@ -54,7 +54,7 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             get { return new Guid("314b8fd6-bffa-462e-812b-601b6fb69615"); }
         }
 
-        protected override Bitmap Icon { get { return Resources.RobotLinearAnalysisComponentIcon; } }
+        protected override Bitmap Icon { get { return Resources.CalculationIcon; } }
 
     }
 }

@@ -25,7 +25,6 @@ C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Debug\SharpFE.Core.dll
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Debug\MathNet.Numerics.pdb
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Debug\MathNet.Numerics.xml
-C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\bin\Debug\SharpFE.Core.pdb
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\obj\Debug\SharpFEGrasshopper.Core.csprojResolveAssemblyReference.cache
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\obj\Debug\SharpGrasshopper.Properties.Resources.resources
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Core\obj\Debug\SharpFEGrasshopper.Core.csproj.GenerateResource.Cache

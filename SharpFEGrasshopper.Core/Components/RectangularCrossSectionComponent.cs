@@ -62,6 +62,6 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
         {
             get { return new Guid("52d5a4e6-eda3-47ff-bb93-a3432f3fd351"); }
         }
-        protected override Bitmap Icon { get { return Resources.CrossSectionIcon; } }
+   //     protected override Bitmap Icon { get { return Resources.CrossSectionIcon; } }
     }
 }

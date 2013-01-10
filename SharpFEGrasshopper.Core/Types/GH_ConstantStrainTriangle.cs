@@ -91,5 +91,19 @@ namespace SharpFEGrasshopper.Core.TypeClass
 			
         	}
         }
+    	
+	
+    	
+
+    	
+		public override GeometryBase GetGeometry(GH_Model model)
+		{
+			throw new NotImplementedException();
+		}
+    	
+		public override GeometryBase GetDeformedGeometry(GH_Model model)
+		{
+			throw new NotImplementedException();
+		}
     }
 }

@@ -47,7 +47,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files %28x86%29\Rhinoceros 4.0\Plug-ins\Grasshopper\Grasshopper.dll</HintPath>
     </Reference>
     <Reference Include="MathNet.Numerics">
-      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Debug\MathNet.Numerics.dll</HintPath>
+      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Release\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="NUnit.Framework">
       <HintPath>$(SharpDevelopBinPath)\Tools\NUnit\NUnit.Framework.dll</HintPath>
@@ -56,7 +56,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files %28x86%29\Rhinoceros 4.0\Plug-ins\Grasshopper\rh_common\RhinoCommon.dll</HintPath>
     </Reference>
     <Reference Include="SharpFE.Core">
-      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Debug\SharpFE.Core.dll</HintPath>
+      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Release\SharpFE.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

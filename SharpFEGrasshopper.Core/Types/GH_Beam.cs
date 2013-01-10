@@ -7,74 +7,53 @@ using SharpFE;
 namespace SharpFEGrasshopper.Core.TypeClass
 {
 
-    public class GH_Beam : GH_Element
-    {
+	public class GH_Beam : GH_Element
+	{
 
 
-        private Point3d Start { get; set; }
-        private Point3d End { get; set; }
-        private GH_CrossSection CrossSection { get; set; }
-        private GH_Material Material {get; set;}
+		private GH_Node Start { get; set; }
+		private GH_Node End { get; set; }
+		private GH_Material Material {get; set;}
+		private GH_CrossSection CrossSection { get; set; }
 
 
-        public GH_Beam(Point3d start, Point3d end, GH_CrossSection crossSection, GH_Material material)
-        {
-        	this.Start = start;
-        	this.End = end;
-        	this.CrossSection = crossSection;
-        	this.Material = material;
-        }
+		public GH_Beam(Point3d start, Point3d end, GH_CrossSection crossSection, GH_Material material)
+		{
 
-        public override string ToString()
-        {
-            string s = "Beam from " + this.Start + " to " + this.End;
-            return s;
-        }
+			this.Start = new GH_Node(start);
+			this.End = new GH_Node(end);
 
-        public override void ToSharpElement(GH_Model model)
-        {
-        	
-        	FiniteElementNode start = null;
-        	FiniteElementNode end = null;
-        	
-        	int startIndex = model.Points.IndexOf(this.Start);
-        		int endIndex = model.Points.IndexOf(this.End);  
-        	
-        	switch (model.ModelType) {
-        			
-        			
-        		case ModelType.Full3D:
-        	
-        	if (startIndex == -1) {      //Start node does not exist		
-        		start = model.Model.NodeFactory.Create(this.Start.X, this.Start.Y, this.Start.Z);
-        		model.Nodes.Add(start);
-        		model.Points.Add(this.Start);
-        	} else {
-        		start = model.Nodes[startIndex];
-        	}   
+			this.CrossSection = crossSection;
+			this.Material = material;
+		}
 
-		
-			
-        	if (endIndex == -1) {      	//End node does not exist	
-        		end = model.Model.NodeFactory.Create(this.End.X, this.End.Y, this.End.Z); 
-        		model.Nodes.Add(end);
-        		model.Points.Add(this.End);
-        	} else {
-        		end = model.Nodes[endIndex];
-        	}
-        	    
-			
-			if (start != null && end != null) {
-				model.Model.ElementFactory.CreateLinear3DBeam(start, end, Material.ToSharpMaterial(), CrossSection.ToSharpCrossSection());
-			}
-			
-			
-			break;
-			
-		default:
-			throw new Exception("Model type not valid: " + model.ModelType);
-			
-        	}
-        }
-    }
+		public override string ToString()
+		{
+			string s = "Beam from " + this.Start + " to " + this.End;
+			return s;
+		}
+
+		public override void ToSharpElement(GH_Model model)
+		{
+
+			Start.ToSharpElement(model);
+			End.ToSharpElement(model);
+			FiniteElementNode startNode = model.Nodes[Start.Index];
+			FiniteElementNode endNode = model.Nodes[End.Index];
+			model.Model.ElementFactory.CreateLinear3DBeam(startNode, endNode, Material.ToSharpMaterial(), CrossSection.ToSharpCrossSection());
+
+		}
+
+		public override GeometryBase GetGeometry(GH_Model model)
+		{
+			LineCurve line = new LineCurve(model.Points[Start.Index], model.Points[End.Index]);
+			return line;
+		}
+
+		public override GeometryBase GetDeformedGeometry(GH_Model model)
+		{
+			LineCurve line = new LineCurve(model.GetDisplacedPoint(Start.Index), model.GetDisplacedPoint(End.Index));
+			return line;
+		}
+	}
 }

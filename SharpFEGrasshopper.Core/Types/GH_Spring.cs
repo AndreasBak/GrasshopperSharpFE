@@ -11,15 +11,15 @@ namespace SharpFEGrasshopper.Core.TypeClass
     {
 
 
-        private Point3d Start { get; set; }
-        private Point3d End { get; set; }
+        private GH_Node Start { get; set; }
+        private GH_Node End { get; set; }
         private double SpringConstant { get; set; }
 
 
         public GH_Spring(Point3d start, Point3d end, double springConstant)
         {
-        	this.Start = start;
-        	this.End = end;
+        	this.Start = new GH_Node(start);
+        	this.End = new GH_Node(end);
         	this.SpringConstant = springConstant;
         }
 
@@ -32,45 +32,27 @@ namespace SharpFEGrasshopper.Core.TypeClass
         public override void ToSharpElement(GH_Model model)
         {
         	
-        	FiniteElementNode start = null;
-        	FiniteElementNode end = null;
+  
         	
-        	int startIndex = model.Points.IndexOf(this.Start);
+        	Start.ToSharpElement(model);
+        	End.ToSharpElement(model);
         	
         	
-        	switch (model.ModelType) {
-        			
-        			
-        		case ModelType.Truss2D:
+        	FiniteElementNode startNode = model.Nodes[Start.Index];
+        	FiniteElementNode endNode = model.Nodes[End.Index];
         	
-        	if (startIndex == -1) {      //Start node does not exist		
-        		start = model.Model.NodeFactory.CreateForTruss(this.Start.X, this.Start.Z); 
-        		model.Nodes.Add(start);
-        		model.Points.Add(this.Start);
-        	} else {
-        		start = model.Nodes[startIndex];
-        	}   
-
-			int endIndex = model.Points.IndexOf(this.End);  
-			
-        	if (endIndex == -1) {      	//End node does not exist	
-        		end = model.Model.NodeFactory.CreateForTruss(this.End.X, this.End.Z); 
-        		model.Nodes.Add(end);
-        		model.Points.Add(this.End);
-        	} else {
-        		end = model.Nodes[endIndex];
-        	}
-        	    
-			
-			if (start != null && end != null) {
-				model.Model.ElementFactory.CreateLinearConstantSpring (start, end, SpringConstant);
-			}
-			break;
-			
-		default:
-			throw new Exception("Model type not valid: " + model.ModelType);
-			
-        	}
+        	model.Model.ElementFactory.CreateLinearConstantSpring(startNode,endNode, this.SpringConstant);
+        	
         }
+    	
+		public override GeometryBase GetGeometry(GH_Model model)
+		{
+			throw new NotImplementedException();
+		}
+    	
+		public override GeometryBase GetDeformedGeometry(GH_Model model)
+		{
+			throw new NotImplementedException();
+		}
     }
 }

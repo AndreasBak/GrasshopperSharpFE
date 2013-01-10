@@ -67,14 +67,14 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="MathNet.Numerics">
-      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Debug\MathNet.Numerics.dll</HintPath>
+      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Release\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="RhinoCommon">
       <HintPath>..\..\..\..\..\..\..\Program Files %28x86%29\Grasshopper for Rhino 5\rh_common\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SharpFE.Core">
-      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Debug\SharpFE.Core.dll</HintPath>
+      <HintPath>..\..\SharpFE\SharpFE.Core\bin\Release\SharpFE.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -103,13 +103,12 @@
     <Compile Include="Components\NodeSupportComponent.cs" />
     <Compile Include="Components\ReactionResultsComponent.cs" />
     <Compile Include="Components\SpringComponent.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="StringManipulation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Types\GH_Beam.cs" />
     <Compile Include="Types\GH_CrossSection.cs" />
     <Compile Include="Types\GH_ElasticMaterial.cs" />
@@ -118,6 +117,7 @@
     <Compile Include="Types\GH_Material.cs" />
     <Compile Include="Types\GH_NodalLoad.cs" />
     <Compile Include="Types\GH_Model.cs" />
+    <Compile Include="Types\GH_Node.cs" />
     <Compile Include="Types\GH_NodeSupport.cs" />
     <Compile Include="Types\GH_RectangularCrossSection.cs" />
     <Compile Include="Types\GH_Spring.cs" />
@@ -126,35 +126,7 @@
     <Compile Include="Types\SimpleGooImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3443056.png" />
     <Compile Include="Types\GH_ConstantStrainTriangle.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BarComponentIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BarEndReleaseIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BarReleaseIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CrossSectionIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MaterialIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RobotApplicationComponentIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RobotLinearAnalysisComponentIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -181,6 +153,13 @@
   <ItemGroup>
     <Folder Include="Components" />
     <Folder Include="Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>SharpFEGrasshopper.Properties</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -126,6 +126,60 @@ namespace SharpFEGrasshopper.Tests.TypesTests
 			Assert.IsTrue(model.Model.IsConstrained(model.Nodes[0], DegreeOfFreedom.ZZ));
 		}
 		
+		[Test]		
+		public void Truss() {
+			
+					model = new GH_Model(ModelType.Full3D);
+			
+					GH_CrossSection crossSection = new GH_RectangularCrossSection(100,100);
+					GH_Material material = new GH_ElasticMaterial(100,100,100,100);
+					
+					
+					Point3d p1 = new Point3d(-10,0,0);
+					Point3d p2 = new Point3d(0,0,0);
+					Point3d p3 = new Point3d(10,0,0);
+					Point3d p4 = new Point3d(-10,0,10);
+					Point3d p5 = new Point3d(0,0,10);
+					Point3d p6 = new Point3d(10,0,10);
+					
+					
+					
+					model.Elements.Add(new GH_Beam(p1,p2, crossSection, material));					
+					model.Elements.Add(new GH_Beam(p2,p3, crossSection, material));	
+					model.Elements.Add(new GH_Beam(p4,p5, crossSection, material));				
+					model.Elements.Add(new GH_Beam(p5,p6, crossSection, material));
+					model.Elements.Add(new GH_Beam(p1,p4, crossSection, material));
+					model.Elements.Add(new GH_Beam(p2,p5, crossSection, material));
+					model.Elements.Add(new GH_Beam(p3,p6, crossSection, material));
+					model.Elements.Add(new GH_Beam(p4,p2, crossSection, material));
+					model.Elements.Add(new GH_Beam(p2,p6, crossSection, material));			
+					model.Supports.Add(new GH_NodeSupport(p1, true, true, true, true, true,true));
+					model.Supports.Add(new GH_NodeSupport(p3, true, true, true, true, true,true));
+					model.Loads.Add(new GH_NodalLoad(p5, new Vector3d(0,0,-1000), new Vector3d(0,0,0)));
+					
+					model.AssembleSharpModel();
+					
+			
+					Assert.AreEqual(9, model.Model.ElementCount);
+			
+					model.Solve();
+			
+			
+					Assert.NotNull(model.Results);
+			
+
+			
+			
+					Vector3d displacement = model.GetNodeDisplacement(1); //Displacement at point2 (index 1)
+				
+			Assert.NotNull(displacement);
+			Assert.AreEqual(0.0, displacement.X, 0.001);
+			Assert.AreEqual(0.0, displacement.Y, 0.001);
+			Assert.AreNotEqual(0.0, displacement.Z); //TODO Calculate real value
+			
+			
+		}
+		
 		
 		[Test]
 		

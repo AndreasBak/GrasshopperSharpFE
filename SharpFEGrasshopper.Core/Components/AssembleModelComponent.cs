@@ -75,7 +75,7 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             
             switch (modelType) {
 
-            	case 0:
+            case 0:
 
             model = new GH_Model(SharpFE.ModelType.Truss2D);
             break;
@@ -89,27 +89,14 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             
             throw new Exception("Model type does not exist or not yet implemented");
             }
-           
             
-
-            //Loop trough and create elements
- 
-            foreach (GH_Element element in elements) {
-                element.ToSharpElement(model);
-            }
-
-            //Loop trough and create supports
-            foreach (GH_Support support in supports)
-            {
-                support.ToSharpSupport(model);
-            }
-
-
-            //Set loads
-            foreach (GH_Load load in loads)
-            {
-              load.ToSharpLoad(model);       
-            }
+            model.Elements = elements;
+            model.Loads = loads;
+            model.Supports = supports;
+            
+            model.AssembleSharpModel();
+            
+  
 
 
             DA.SetData(0, model);           
@@ -120,7 +107,7 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             get { return new Guid("dbf71b83-513f-4cc8-958d-0d4d4dc36538"); }
         }
 
-        protected override Bitmap Icon { get { return Resources.RobotApplicationComponentIcon; } }
+//        protected override Bitmap Icon { get { return Resources.RobotApplicationComponentIcon; } }
 
     }
 }
