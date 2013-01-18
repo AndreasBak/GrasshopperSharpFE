@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SharpFEGrasshopper.Properties {
+namespace SharpGrasshopper {
 	using System;
 	
 	
@@ -39,7 +39,7 @@ namespace SharpFEGrasshopper.Properties {
 		internal static global::System.Resources.ResourceManager ResourceManager {
 			get {
 				if (object.ReferenceEquals(resourceMan, null)) {
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SharpFEGrasshopper.Properties.Resources", typeof(Resources).Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SharpGrasshopper.Resources", typeof(Resources).Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;
@@ -63,19 +63,9 @@ namespace SharpFEGrasshopper.Properties {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
-		internal static System.Drawing.Bitmap BarIcon {
+		internal static System.Drawing.Bitmap BeamIcon {
 			get {
-				object obj = ResourceManager.GetObject("BarIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap BarReleaseIcon {
-			get {
-				object obj = ResourceManager.GetObject("BarReleaseIcon", resourceCulture);
+				object obj = ResourceManager.GetObject("BeamIcon", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -93,96 +83,6 @@ namespace SharpFEGrasshopper.Properties {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
-		internal static System.Drawing.Bitmap CalculationSettingsIcon {
-			get {
-				object obj = ResourceManager.GetObject("CalculationSettingsIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap DimensionIcon {
-			get {
-				object obj = ResourceManager.GetObject("DimensionIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap EndReleaseIcon {
-			get {
-				object obj = ResourceManager.GetObject("EndReleaseIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap GroupIcon {
-			get {
-				object obj = ResourceManager.GetObject("GroupIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap ISectionIcon {
-			get {
-				object obj = ResourceManager.GetObject("ISectionIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap LinearLoadIcon {
-			get {
-				object obj = ResourceManager.GetObject("LinearLoadIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap LoadCaseIcon {
-			get {
-				object obj = ResourceManager.GetObject("LoadCaseIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap LoadMaterialIcon {
-			get {
-				object obj = ResourceManager.GetObject("LoadMaterialIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap LoadSectionIcon {
-			get {
-				object obj = ResourceManager.GetObject("LoadSectionIcon", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
 		internal static System.Drawing.Bitmap MaterialIcon {
 			get {
 				object obj = ResourceManager.GetObject("MaterialIcon", resourceCulture);
@@ -193,9 +93,19 @@ namespace SharpFEGrasshopper.Properties {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
-		internal static System.Drawing.Bitmap NodalLoadIcon {
+		internal static System.Drawing.Bitmap NodalDisplacementIcon {
 			get {
-				object obj = ResourceManager.GetObject("NodalLoadIcon", resourceCulture);
+				object obj = ResourceManager.GetObject("NodalDisplacementIcon", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap NodalForceIcon {
+			get {
+				object obj = ResourceManager.GetObject("NodalForceIcon", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -213,9 +123,9 @@ namespace SharpFEGrasshopper.Properties {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
-		internal static System.Drawing.Bitmap RobotIcon {
+		internal static System.Drawing.Bitmap RectangularSectionIcon {
 			get {
-				object obj = ResourceManager.GetObject("RobotIcon", resourceCulture);
+				object obj = ResourceManager.GetObject("RectangularSectionIcon", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -223,9 +133,9 @@ namespace SharpFEGrasshopper.Properties {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
-		internal static System.Drawing.Bitmap SelfweightIcon {
+		internal static System.Drawing.Bitmap SharpFEIcon {
 			get {
-				object obj = ResourceManager.GetObject("SelfweightIcon", resourceCulture);
+				object obj = ResourceManager.GetObject("SharpFEIcon", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

@@ -9,7 +9,9 @@ using Rhino.Geometry;
 using SharpFE;
 using SharpFEGrasshopper.Core;
 using SharpFEGrasshopper.Core.TypeClass;
-using SharpFEGrasshopper.Properties;
+using SharpGrasshopper;
+
+//using SharpFEGrasshopper.Properties;
 
 namespace SharpFEGrasshopper.Core.ClassComponent {
 
@@ -107,7 +109,7 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             get { return new Guid("dbf71b83-513f-4cc8-958d-0d4d4dc36538"); }
         }
 
-//        protected override Bitmap Icon { get { return Resources.RobotApplicationComponentIcon; } }
+    protected override Bitmap Icon { get { return Resources.SharpFEIcon; } }
 
     }
 }

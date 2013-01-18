@@ -1,9 +1,0 @@
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\bin\debug\MathNet.Numerics.dll
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\bin\debug\SharpFE.Core.dll
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\obj\Debug\SharpFEGrasshopper.csprojResolveAssemblyReference.cache
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\obj\Debug\SharpGrasshopper.Properties.Resources.resources
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\obj\Debug\SharpFEGrasshopper.csproj.GenerateResource.Cache
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\bin\debug\SharpFEGrasshopper.dll
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\bin\debug\SharpFEGrasshopper.pdb
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\obj\Debug\SharpFEGrasshopper.dll
-C:\Users\Andreas Bak\Documents\SharpDevelop\Project\SharpFEGrasshopper\RobotGrasshopper\obj\Debug\SharpFEGrasshopper.pdb

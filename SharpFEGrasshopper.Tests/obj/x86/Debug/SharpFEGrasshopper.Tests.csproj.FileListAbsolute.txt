@@ -47,8 +47,6 @@ C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Test
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\GH_IO.xml
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\Grasshopper.pdb
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\Grasshopper.xml
-C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\MathNet.Numerics.pdb
-C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\MathNet.Numerics.xml
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\RhinoCommon.xml
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\OpenTK.GLControl.xml
 C:\Users\Andreas Bak\Documents\GitHub\GrasshopperSharpFE\SharpFEGrasshopper.Tests\bin\Debug\OpenTK.xml

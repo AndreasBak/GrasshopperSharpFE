@@ -104,7 +104,7 @@ namespace SharpFEGrasshopper.Core.TypeClass
 							} else {
 								vector.Z = Results.GetDisplacement(node).Z;
 							}
-							
+					
 					
 					break;
 
@@ -116,11 +116,33 @@ namespace SharpFEGrasshopper.Core.TypeClass
         	}
         }
         
+        
+        public Vector3d GetNodeReaction(int nodeIndex) {
+        	
+        	Vector3d vector = new Vector3d();
+        	
+        	if (this.Results == null) {
+
+        		throw new Exception("Results not availiable, please solve model first");
+
+			} else {
+				
+				FiniteElementNode node = this.Nodes[nodeIndex];
+				
+				ReactionVector reaction = this.Results.GetReaction(node);
+			
+        	}
+        
+        	return vector;
+        }
+        
         	
         	
         	public Point3d GetDisplacedPoint(int nodeIndex) {	
         		return this.Points[nodeIndex] + GetNodeDisplacement(nodeIndex);
         	}
+        
+
 
 
 

@@ -7,7 +7,7 @@ using Grasshopper.Kernel;
 using Rhino;
 using Rhino.Geometry;
 using SharpFEGrasshopper.Core.TypeClass;
-using SharpFEGrasshopper.Properties;
+using SharpGrasshopper;
 
 namespace SharpFEGrasshopper.Core.ClassComponent {
 

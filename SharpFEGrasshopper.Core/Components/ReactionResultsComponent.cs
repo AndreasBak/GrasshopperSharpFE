@@ -53,7 +53,7 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
 
 
 
-            throw new NotImplementedException();
+            throw new NotImplementedException("Reaction result component");
             
 
         }

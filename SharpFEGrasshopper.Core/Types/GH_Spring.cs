@@ -47,12 +47,12 @@ namespace SharpFEGrasshopper.Core.TypeClass
     	
 		public override GeometryBase GetGeometry(GH_Model model)
 		{
-			throw new NotImplementedException();
+			throw new NotImplementedException("Spring element. Geometry");
 		}
     	
 		public override GeometryBase GetDeformedGeometry(GH_Model model)
 		{
-			throw new NotImplementedException();
+			throw new NotImplementedException("Spring element. Deformed geometry");
 		}
     }
 }

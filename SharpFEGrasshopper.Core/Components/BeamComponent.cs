@@ -7,7 +7,7 @@ using Grasshopper.Kernel;
 using Rhino;
 using Rhino.Geometry;
 using SharpFEGrasshopper.Core.TypeClass;
-using SharpFEGrasshopper.Properties;
+using SharpGrasshopper;
 
 namespace SharpFEGrasshopper.Core.ClassComponent {
 
@@ -61,6 +61,6 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
         {
             get { return new Guid("b00ab4d8-8d86-4a5a-b1fa-09696d696bfe"); }
         }
-        protected override Bitmap Icon { get { return Properties.Resources.BarIcon ; } }
+        protected override Bitmap Icon { get { return Resources.BeamIcon ; } }
     }
 }
