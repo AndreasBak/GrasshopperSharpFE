@@ -21,14 +21,12 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
         public AssembleModelComponent()
             : base("AssembleModel", "A", "Assemble SharpFE model", "SharpFE", "Application")
         {
+            //empty
         }
 
-
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
-
-
         {
-            pManager.AddGenericParameter("Elements", "E", "Elements", GH_ParamAccess.list);     
+            pManager.AddGenericParameter("Elements", "E", "Elements", GH_ParamAccess.list);
             pManager.AddGenericParameter("Supports", "S", "Supports", GH_ParamAccess.list);
             pManager.AddGenericParameter("Loads", "L", "Loads", GH_ParamAccess.list);
             pManager.AddIntegerParameter("ModelType","T", "Model type: 0 = 2D truss, 1 = 3D full", GH_ParamAccess.item, 0);
@@ -36,8 +34,6 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             pManager[0].Optional = true;
             pManager[1].Optional = true;
             pManager[2].Optional = true;
-        //    pManager[3].Optional = true;
-           
         }
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
@@ -47,49 +43,46 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            
-
-            // Declare a variable for the input
-        
             List<GH_Element> elements = new List<GH_Element>();
             List<GH_Support> supports = new List<GH_Support>();
-           
+            
             List<GH_Load> loads = new List<GH_Load>();
-          
+            
             int modelType = 0;
 
-            // Use the DA object to retrieve the data inside the first input parameter.
-            // If the retieval fails (for example if there is no data) we need to abort.
-       //     if (!DA.GetDataList<Point3d>(0, points)) { points = new List<Point3d>(); }
-       //     if (!DA.GetDataList<GHBar>(1, bars)) { bars = new List<GHBar>(); }
-            if (!DA.GetDataList<GH_Element>(0, elements)) {  }
-        
-            if (!DA.GetDataList<GH_Support>(1, supports)) {  }
-            if (!DA.GetDataList<GH_Load>(2, loads)) { }
-            if (!DA.GetData(3, ref modelType)) { }
-
-
+            if (!DA.GetDataList<GH_Element>(0, elements))
+            { 
+                return;
+            }
+            
+            if (!DA.GetDataList<GH_Support>(1, supports))
+            { 
+                return;
+            }
+            
+            if (!DA.GetDataList<GH_Load>(2, loads))
+            {
+                return;
+            }
+            
+            if (!DA.GetData(3, ref modelType))
+            {
+                return;
+            }
 
             //Clear current structure... Perhaps change this for a more parametric approach, or opening existing files
-           
-            
             GH_Model model = null;
             
-            switch (modelType) {
-
-            case 0:
-
-            model = new GH_Model(SharpFE.ModelType.Truss2D);
-            break;
-            
-           case 1:
-            model = new GH_Model(SharpFE.ModelType.Full3D);
-            break;
-            
-            
-           default:
-            
-            throw new Exception("Model type does not exist or not yet implemented");
+            switch (modelType)
+            {
+                case 0:
+                    model = new GH_Model(ModelType.Truss2D);
+                    break;
+                case 1:
+                    model = new GH_Model(ModelType.Full3D);
+                    break;  
+                default:
+                    throw new Exception("Model type does not exist or not yet implemented");
             }
             
             model.Elements = elements;
@@ -98,10 +91,7 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             
             model.AssembleSharpModel();
             
-  
-
-
-            DA.SetData(0, model);           
+            DA.SetData(0, model);
         }
 
         public override Guid ComponentGuid
@@ -109,7 +99,13 @@ namespace SharpFEGrasshopper.Core.ClassComponent {
             get { return new Guid("dbf71b83-513f-4cc8-958d-0d4d4dc36538"); }
         }
 
-    protected override Bitmap Icon { get { return Resources.SharpFEIcon; } }
+        protected override Bitmap Icon
+        {
+            get 
+            { 
+                return Resources.SharpFEIcon;
+            }
+        }
 
     }
 }
