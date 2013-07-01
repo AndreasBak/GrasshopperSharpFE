@@ -31,17 +31,19 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SourceAnalysisOverrideSettingsFile>C:\Users\Andreas Bak\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\ispro\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <SignAssembly>False</SignAssembly>
     <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <RunCodeAnalysis>False</RunCodeAnalysis>
     <RunSourceAnalysis>False</RunSourceAnalysis>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <ErrorReport>prompt</ErrorReport>
@@ -59,18 +61,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GH_IO">
-      <HintPath>..\..\..\..\..\..\..\Program Files %28x86%29\Grasshopper for Rhino 5\GH_IO.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files %28x86%29\Grasshopper for Rhino 5\GH_IO.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Grasshopper">
-      <HintPath>..\..\..\..\..\..\..\Program Files %28x86%29\Grasshopper for Rhino 5\Grasshopper.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files %28x86%29\Grasshopper for Rhino 5\Grasshopper.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MathNet.Numerics">
       <HintPath>lib\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="RhinoCommon">
-      <HintPath>..\..\..\..\..\..\..\Program Files %28x86%29\Grasshopper for Rhino 5\rh_common\RhinoCommon.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Rhinoceros 5.0 %2864-bit%29\System\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SharpFE.Core">
@@ -94,6 +96,7 @@
   <ItemGroup>
     <Compile Include="Components\ConstantStrainTriangleComponent.cs" />
     <Compile Include="Components\ElasticMaterialComponent.cs" />
+    <Compile Include="Components\GenericCrossSection.cs" />
     <Compile Include="Components\RectangularCrossSectionComponent.cs" />
     <Compile Include="Components\AssembleModelComponent.cs" />
     <Compile Include="Components\BeamComponent.cs" />
@@ -170,9 +173,10 @@
   -->
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Optimize>False</Optimize>
-    <StartAction>Program</StartAction>
+    <StartAction>Project</StartAction>
     <StartProgram>..\..\..\..\..\..\..\Program Files\Rhinoceros 5.0 Evaluation (64-bit)\System\Rhino.exe</StartProgram>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <Optimize>true</Optimize>
@@ -180,11 +184,12 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <RegisterForComInterop>True</RegisterForComInterop>
+    <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <BaseAddress>4194304</BaseAddress>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <FileAlignment>512</FileAlignment>
+    <FileAlignment>4096</FileAlignment>
+    <Prefer32Bit>False</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <RegisterForComInterop>False</RegisterForComInterop>
@@ -192,22 +197,6 @@
     <BaseAddress>4194304</BaseAddress>
     <PlatformTarget>x64</PlatformTarget>
     <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'De' ">
-    <StartAction>Program</StartAction>
-    <StartProgram>C:\Program Files\Rhinoceros 5.0 Evaluation (64-bit)\System\rhino.exe</StartProgram>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'De|AnyCPU' ">
-    <OutputPath>bin\</OutputPath>
-    <DebugType>Full</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'De|x86' ">
-    <OutputPath>bin\</OutputPath>
-    <DebugType>Full</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -220,5 +209,9 @@
     <DebugType>Full</DebugType>
     <WarningLevel>4</WarningLevel>
     <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)packages\ILRepack.1.22.2\tools\ILRepack.exe" /log /wildcards /out:"$(TargetDir)\$(ProjectName).gha" *.dll
+Copy "$(TargetDir)$(ProjectName).gha" "C:\Users\$(UserName)\AppData\Roaming\Grasshopper\Libraries\$(ProjectName).gha"</PostBuildEvent>
   </PropertyGroup>
 </Project>
