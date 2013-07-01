@@ -116,6 +116,7 @@
     <Compile Include="Types\GH_CrossSection.cs" />
     <Compile Include="Types\GH_ElasticMaterial.cs" />
     <Compile Include="Types\GH_Element.cs" />
+    <Compile Include="Types\GH_GenericCrossSection.cs" />
     <Compile Include="Types\GH_Load.cs" />
     <Compile Include="Types\GH_Material.cs" />
     <Compile Include="Types\GH_NodalLoad.cs" />

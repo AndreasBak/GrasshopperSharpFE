@@ -1,20 +1,36 @@
 ﻿/*
- * Copyright Iain Sproat, 2013
- * User: ispro
- * Date: 01/07/2013
- * 
+ * Iain Sproat, 2013
  */
-using System;
 
-namespace SharpGrasshopper.Types
+namespace SharpFEGrasshopper.Core.TypeClass
 {
-    /// <summary>
-    /// Description of GH_GenericCrossSection.
-    /// </summary>
-    public class GH_GenericCrossSection
+    using System;
+    using SharpFE;
+
+    public class GH_GenericCrossSection : GH_CrossSection
     {
-        public GH_GenericCrossSection()
+        public double Area
         {
+            get;
+            private set;
+        }
+        
+        public double Iyy
+        {
+            get;
+            private set;
+        }
+        
+        public GH_GenericCrossSection(double area, double iyy)
+        {
+            this.Area = area;
+            this.Iyy = iyy;
+        }
+        
+        public override ICrossSection ToSharpCrossSection()
+        {
+            GenericCrossSection crossSection = new GenericCrossSection(this.Area, this.Iyy);
+            return crossSection;
         }
     }
 }
