@@ -1,2 +1,5 @@
 /SharpFEGrasshopper.Core/bin
 /SharpFEGrasshopper.Core/obj
+/SharpFEGrasshopper.Tests/bin
+/SharpFEGrasshopper.Tests/obj
+/SharpFEGrasshopper.Tests/PartCover
