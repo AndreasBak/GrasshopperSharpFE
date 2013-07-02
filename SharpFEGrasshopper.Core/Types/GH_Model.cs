@@ -24,7 +24,7 @@ namespace SharpFEGrasshopper.Core.TypeClass
 
         
 
-        public GH_Model(SharpFE.ModelType modelType)
+        public GH_Model(ModelType modelType)
         {
         	this.ModelType = modelType;
             this.Model = new FiniteElementModel(ModelType);
