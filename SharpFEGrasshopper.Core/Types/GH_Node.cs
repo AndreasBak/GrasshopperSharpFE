@@ -55,7 +55,7 @@ namespace SharpFEGrasshopper.Core.TypeClass
         	case ModelType.Truss2D:
         	
         	if (index == -1) {      //Node does not exist		
-        		node = model.Model.NodeFactory.CreateForTruss(this.Position.X, this.Position.Z);
+        		node = model.Model.NodeFactory.CreateFor2DTruss(this.Position.X, this.Position.Z);
         		model.Nodes.Add(node);
         		model.Points.Add(this.Position);
         		this.Index = model.Points.Count-1;

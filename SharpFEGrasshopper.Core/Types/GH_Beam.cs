@@ -9,8 +9,6 @@ namespace SharpFEGrasshopper.Core.TypeClass
 
 	public class GH_Beam : GH_Element
 	{
-
-
 		private GH_Node Start { get; set; }
 		private GH_Node End { get; set; }
 		private GH_Material Material {get; set;}
@@ -35,13 +33,11 @@ namespace SharpFEGrasshopper.Core.TypeClass
 
 		public override void ToSharpElement(GH_Model model)
 		{
-
 			Start.ToSharpElement(model);
 			End.ToSharpElement(model);
 			FiniteElementNode startNode = model.Nodes[Start.Index];
 			FiniteElementNode endNode = model.Nodes[End.Index];
-			model.Model.ElementFactory.CreateLinear3DBeam(startNode, endNode, Material.ToSharpMaterial(), CrossSection.ToSharpCrossSection());
-
+			model.Model.ElementFactory.CreateLinear1DBeam(startNode, endNode, Material.ToSharpMaterial(), CrossSection.ToSharpCrossSection());
 		}
 
 		public override GeometryBase GetGeometry(GH_Model model)
